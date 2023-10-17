@@ -2,7 +2,7 @@ package com.example;
 import java.util.ArrayList;
 
 import javafx.scene.Node;
-import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.paint.Color;
 import javafx.scene.layout.Pane;
@@ -11,7 +11,7 @@ public class Block extends Rectangle {
     /**
      * Label displaying the block's number.
      */
-    private Label number;
+    private Text number;
 
     /**
      * Current position of this block.
@@ -69,6 +69,11 @@ public class Block extends Rectangle {
         background.getChildren().add(this);
         setX((position % 4) * squareSide);
         setY((position / 4) * squareSide);
+
+        number = new Text(((Integer) position).toString());
+        number.setX(getX() + 30);
+        number.setY(getY() + 30);
+        background.getChildren().add(number);
         //grid.add(number, position / 4, position % 4);
         System.out.println("added");
     }
@@ -78,6 +83,8 @@ public class Block extends Rectangle {
      */
     public void moveUp() {
         setY(getY() - squareSide);
+        number.setX(getX() + 30);
+        number.setY(getY() + 30);
         position -= 4;
         System.out.println("block moved up");
     }
@@ -87,6 +94,8 @@ public class Block extends Rectangle {
      */
     public void moveDown() {
         setY(getY() + squareSide);
+        number.setX(getX() + 30);
+        number.setY(getY() + 30);
         position += 4;
         System.out.println("block moved down");
     }
@@ -96,6 +105,8 @@ public class Block extends Rectangle {
      */
     public void moveLeft() {
         setX(getX() - squareSide);
+        number.setX(getX() + 30);
+        number.setY(getY() + 30);
         position -= 1;
         System.out.println("block moved left");
     }
@@ -105,6 +116,8 @@ public class Block extends Rectangle {
      */
     public void moveRight() {
         setX(getX() + squareSide);
+        number.setX(getX() + 30);
+        number.setY(getY() + 30);
         position += 1;
         System.out.println("block moved right");
     }
