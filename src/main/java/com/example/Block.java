@@ -60,10 +60,14 @@ public class Block extends Rectangle {
         System.out.println(position / 4);
         System.out.println(position % 4);
 
-        if (position % 2 == 1) {
+        if (position % 4 == 0) {
             this.setFill(Color.CORAL);
-        } else {
+        } else if (position % 4 == 1) {
             this.setFill(Color.CORNFLOWERBLUE);
+        } else if (position % 4 == 2) {
+            this.setFill(Color.VIOLET);
+        } else if (position % 4 == 3) {
+            this.setFill(Color.BEIGE);
         }
 
         background.getChildren().add(this);

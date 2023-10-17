@@ -2,6 +2,7 @@ package com.example;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javafx.application.Application;
 import javafx.scene.Node;
@@ -27,21 +28,39 @@ public class App extends Application {
         Pane root = new Pane();
         scene = new Scene(root, 400, 400);
 
-        // root.setHgap(2);
-        // root.setVgap(2);
-
         ArrayList<Node> positionsTab = new ArrayList<Node>(16);
-        // Block block = new Block(root, 1, positionsTab);
-        // Block secondBlock = new Block(root, 14, positionsTab);
-        // secondBlock.moveUp();
 
-        for (int i = 0; i < 15; i++){
+        int[] array = new int[16];
+        Random generator = new Random();
+
+        // for (int i = 0; i < 15; i++){
+        //     int randomNumber = generator.nextInt(16);
+        //     while (array[randomNumber] > 0) {
+        //         randomNumber++;
+        //         if (randomNumber > 15) {
+        //             randomNumber = 0;
+        //         }
+        //         array[randomNumber] = i;
+        //     }
+        // }
+
+        for (int i = 0; i < 15; i++) {
             Block block = new Block(root, i, positionsTab);
             positionsTab.add(i, block);
         }
 
-        Hole hole = new Hole(15, positionsTab);
-        positionsTab.add(15, hole);
+        //initializing so that it doesn't screem at me
+        //this will be overwritten in the loop
+        // Hole hole = new Hole(0, positionsTab);
+        // for (int i = 0; i < 16; i++) {
+        //     if (array[i] == 0) {
+        //         hole = new Hole(i, positionsTab);
+        //         positionsTab.add(i, hole);
+        //     }
+        // }
+        // final Hole tempHole = hole;
+        Hole tempHole = new Hole(15, positionsTab);
+        positionsTab.add(15, tempHole);
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(final KeyEvent event) {
@@ -49,19 +68,19 @@ public class App extends Application {
                 switch (event.getCode()) {
                     case UP:
                         //System.out.println("UP key registered");
-                        hole.moveUp();
+                        tempHole.moveUp();
                         break;
                     case DOWN:
                         //System.out.println("DOWN key registered");
-                        hole.moveDown();
+                        tempHole.moveDown();
                         break;
                     case LEFT:
                         //System.out.println("LEFT key registered");
-                        hole.moveLeft();
+                        tempHole.moveLeft();
                         break;
                     case RIGHT:
                         //System.out.println("RIGHT key registered");
-                        hole.moveRight();
+                        tempHole.moveRight();
                         break;
                     default:
                         break;

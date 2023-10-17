@@ -58,11 +58,11 @@ public class Hole extends Rectangle {
             int tempPosition = position;
             position = position - 4;
             //System.out.println(position);
-            System.out.println("moved down");
             Collections.swap(positionsTab, tempPosition, position);
             //System.out.println("Swapped " + position + " and " + tempPosition);
             ((Block) positionsTab.get(tempPosition)).moveDown();
             //System.out.println(positionsTab.toString());
+            System.out.println("moved down");
         }
     }
 
