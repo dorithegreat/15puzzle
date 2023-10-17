@@ -1,0 +1,8 @@
+@startuml diagram
+
+skinparam style strictuml
+
+App -> Hole: move
+Hole -> Block: move block
+
+@enduml
