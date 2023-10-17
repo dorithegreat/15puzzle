@@ -30,35 +30,11 @@ public class App extends Application {
 
         ArrayList<Node> positionsTab = new ArrayList<Node>(16);
 
-        int[] array = new int[16];
-        Random generator = new Random();
-
-        // for (int i = 0; i < 15; i++){
-        //     int randomNumber = generator.nextInt(16);
-        //     while (array[randomNumber] > 0) {
-        //         randomNumber++;
-        //         if (randomNumber > 15) {
-        //             randomNumber = 0;
-        //         }
-        //         array[randomNumber] = i;
-        //     }
-        // }
-
         for (int i = 0; i < 15; i++) {
             Block block = new Block(root, i, positionsTab);
             positionsTab.add(i, block);
         }
 
-        //initializing so that it doesn't screem at me
-        //this will be overwritten in the loop
-        // Hole hole = new Hole(0, positionsTab);
-        // for (int i = 0; i < 16; i++) {
-        //     if (array[i] == 0) {
-        //         hole = new Hole(i, positionsTab);
-        //         positionsTab.add(i, hole);
-        //     }
-        // }
-        // final Hole tempHole = hole;
         Hole tempHole = new Hole(15, positionsTab);
         positionsTab.add(15, tempHole);
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {

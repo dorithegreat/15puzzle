@@ -39,6 +39,12 @@ public class Block extends Rectangle {
      */
     private final int squareSide = 70;
 
+
+    /**
+     * a constant used for centering the text fields over the rectangles.
+     */
+    private final int textSpacing = 30;
+
     /**
      * constructor.
      *
@@ -75,8 +81,8 @@ public class Block extends Rectangle {
         setY((position / 4) * squareSide);
 
         number = new Text(((Integer) position).toString());
-        number.setX(getX() + 30);
-        number.setY(getY() + 30);
+        number.setX(getX() + textSpacing);
+        number.setY(getY() + textSpacing);
         background.getChildren().add(number);
         //grid.add(number, position / 4, position % 4);
         System.out.println("added");
@@ -87,8 +93,8 @@ public class Block extends Rectangle {
      */
     public void moveUp() {
         setY(getY() - squareSide);
-        number.setX(getX() + 30);
-        number.setY(getY() + 30);
+        number.setX(getX() + textSpacing);
+        number.setY(getY() + textSpacing);
         position -= 4;
         System.out.println("block moved up");
     }
@@ -98,8 +104,8 @@ public class Block extends Rectangle {
      */
     public void moveDown() {
         setY(getY() + squareSide);
-        number.setX(getX() + 30);
-        number.setY(getY() + 30);
+        number.setX(getX() + textSpacing);
+        number.setY(getY() + textSpacing);
         position += 4;
         System.out.println("block moved down");
     }
@@ -109,8 +115,8 @@ public class Block extends Rectangle {
      */
     public void moveLeft() {
         setX(getX() - squareSide);
-        number.setX(getX() + 30);
-        number.setY(getY() + 30);
+        number.setX(getX() + textSpacing);
+        number.setY(getY() + textSpacing);
         position -= 1;
         System.out.println("block moved left");
     }
@@ -120,8 +126,8 @@ public class Block extends Rectangle {
      */
     public void moveRight() {
         setX(getX() + squareSide);
-        number.setX(getX() + 30);
-        number.setY(getY() + 30);
+        number.setX(getX() + textSpacing);
+        number.setY(getY() + textSpacing);
         position += 1;
         System.out.println("block moved right");
     }
