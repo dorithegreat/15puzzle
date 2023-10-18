@@ -13,7 +13,11 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
 /**
- * Something completely different.
+<<<<<<< HEAD
+ * Test to mess with git.
+=======
+ * Test to mess with git.
+>>>>>>> secondary
  */
 public class App extends Application {
 
