@@ -13,7 +13,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
 /**
- * JavaFX App.
+ * Something completely different.
  */
 public class App extends Application {
 
